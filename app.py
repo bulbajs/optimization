@@ -3,10 +3,10 @@ from optimization import optimization
 
 def main(page: ft.Page):
     page.title = 'OPTIMIZATION'
-    exw_field = ft.TextField(label = "EXW", hint_text = "Введите значение")
+    exw_field = ft.TextField(label = "EXW", hint_text = "Введите значение", width = 150)
     tr_field = ft.TextField(label="TR", hint_text="Введите значение")
     customs_rate_field = ft.TextField(label="customs_rate", hint_text="Введите 0.22 или 0.32")
-    result = ft.Text(value = '0')
+    result = ft.TextField(label = 'Цена для клиента', value = '0')
     dlg = ft.AlertDialog(
         modal= True,
         title=ft.Text('Внимание'),
@@ -27,7 +27,7 @@ def main(page: ft.Page):
             cm_rate = float(customs_rate_field.value)
             res = optimization(EXW, TR, cm_rate)
             a = res['customer_price']
-            result.value = f'Цена для клиента  = {a:.2f} евро'
+            result.value = f'{a:.2f} евро'
         except ValueError:
                 page.show_dialog(dlg)
                 return
