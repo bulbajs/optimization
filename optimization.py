@@ -13,14 +13,12 @@ def optimization(EXW: int, TR: int, customs_rate: float):
         'customer_price': customer_price,
     }
 
+if __name__ == "__main__":
+    EXW = int(input('Введите EXW: '))
+    TR = int(input('Введите стоимость транспорта: '))
+    customs_rate = float(input('Введите ставку 0,22 или 0,32: '))
 
-# EXW = int(input('Введите EXW: '))
-# TR = int(input('Введите стоимость транспорта: '))
-# customs_rate = float(input('Введите ставку 0,22 или 0,32: '))
-
-# result = optimization(EXW, TR, customs_rate)
-#
-#
-# print(f'Цена для клиента = {round(result["CC_final"],2)} евро')евро
+    result = optimization(EXW, TR, customs_rate)
+    print(f'Цена для клиента = {round(result["CC_final"],2)} евро')
 
 

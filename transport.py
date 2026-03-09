@@ -11,9 +11,10 @@ def linear_meters(length_mm):
         tr_cost = MAX_TR_COST
     return tr_cost
 
-length_mm = float(input('Введите значение длины в мм: '))
-result = linear_meters(length_mm)
-print(result)
+if __name__ == "__main__":
+    length_mm = float(input('Введите значение длины в мм: '))
+    result = linear_meters(length_mm)
+    print(result)
 
 
 # Отрицательные значения при вводе
